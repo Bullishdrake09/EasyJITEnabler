@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy JIT Enabler</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Main Section Styles */
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            display: none; /* Hide all steps by default */
+        }
+        #step1 {
+            display: block; /* Show step 1 by default */
+        }
+        #step2,
+        #step3,
+        #step4,
+        #step5,
+        #step6,
+        #step7,
+        #step8,
+        #step9,
+        #step10,
+        #step11 {
+            display: none; /* Hide steps 2 to 11 by default */
+        }
+
+        /* Step Image Styles */
+        .step-image {
+            max-width: 100%;
+            display: none; /* Hide all step images by default */
+            margin: auto;
+        }
+
+        /* Next/Previous Button Styles */
+        .nav-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Easy JIT Enabler</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="https://www.python.org/downloads/">Python Download</a>
+        <a href="https://www.icloud.com/shortcuts/b0ffc9c3f0e74e7a8f8052c89fa322cf" target="_blank">Shortcut Download</a>
+        <a href="https://github.com/Bullishdrake09/EasyJITEnabler" target="_blank">EasyJITEnabler GitHub</a>
+    </nav>
+    <section id="steps">
+        <h2>Steps to Install</h2>
+        <p id="step1">Step 1: Make sure when installing Python, it is added to path and ensure that "Install launcher for all users" is DISABLED. This is very important for it to work.</p>
+        <img id="python-image" class="step-image" src="https://cloudacademy.com/wp-content/uploads/2020/01/Python-Windows-installer.png" alt="Python Installer">
+        <p id="step2">Step 2: Make sure you have the latest version of Python installed</p>
+        <img id="step2-image" class="step-image" src="https://media.geeksforgeeks.org/wp-content/uploads/20230324092503/Screenshot-2023-03-24-092449.png" alt="Python Installer">
+        <p id="step3">Step 3: Download EasyJITEnabler from <a href="https://github.com/Bullishdrake09/EasyJITEnabler/releases/download/Beta/EasyJITEnabler.7z" target="_blank">my github</a></p>
+        <p id="step4">Step 4: Extract the zip file you just downloaded from my github</p>
+        <img id="step4-image" class="step-image" src="https://infosec.ed.ac.uk/sites/default/files/styles/16_9/public/2022-10/img_extract%201-2.png?itok=hq-URQil" alt="Extracting Zip">
+        <p id="step5">Step 5: Open up "pib installer here" inside the folder and wait until it is installed</p>
+        <p id="step6">Step 6: Make sure iTunes and iCloud (web versions!) are installed</p>
+        <p id="step7">Step 7: Open up ENABLE SERVER FOR FIRST TIME HERE, wait until it asks you to type y/N, type y and click enter</p>
+        <p id="step8">Step 8: Install <a href="https://www.icloud.com/shortcuts/b0ffc9c3f0e74e7a8f8052c89fa322cf" target="_blank">this shortcut</a> on your iPhone (Shortcut download above is the same download link)</p>
+        <p id="step9">Step 9: When installing the shortcut, it will ask you to put in your UDID. To get this, open up iTunes on your PC/laptop, click on the phone emoji/icon at the top and click on 'serial number' once to see your UDID. Type this code into the first prompt of the SideJIT shortcut.</p>
+        <p id="step10">Step 10: The next thing it asks you is your SideJIT server address. To get this, go to the terminal (the black box with all the code) and type the last number generated (e.g., 192.168.x.x). Write that number down in the shortcut, and it is all set up. Did you close the terminal? No problem. Run "OPEN THIS FILE TO ENABLE JIT SERVER," and it will generate a new code for you. (You need to be on the same Wi-Fi network as your phone AND you need to still have to be connected with a cable to your computer!)</p>
+        <p id="step11">Step 11: After all of this, we can finally enable JIT. Make sure your phone is still connected to your laptop, run the "SideJIT" shortcut, select the app you want to enable JIT on, and you should get a message saying 'JIT enabled!'. Disclaimer: You do not have to do all those steps over and over again to run JIT. Running "OPEN THIS FILE TO ENABLE JIT SERVER" Is enough for the server to start, and normally, if you do not change networks, the number you wrote down will not change. (192.168....). If you have any questions or if you found bugs, feel free to add me on Discord (Bullishdrake09).</p>
+        <button class="nav-button" onclick="previousStep()">Previous Step</button>
+        <button class="nav-button" onclick="nextStep()">Next Step</button>
+    </section>
+    <footer>
+        <p>&copy; 2024 Easy JIT enabler by Bullishdrake09</p>
+    </footer>
+
+    <script>
+        var currentStep = 1;
+
+        function showStep(step) {
+            document.getElementById('step' + currentStep).style.display = 'none';
+            document.getElementById('step' + step).style.display = 'block';
+            document.getElementById('python-image').style.display = 'none';
+            document.getElementById('step2-image').style.display = 'none';
+            document.getElementById('step4-image').style.display = 'none';
+            if (step === 1) {
+                document.getElementById('python-image').style.display = 'block';
+            } else if (step === 2) {
+                document.getElementById('step2-image').style.display = 'block';
+            } else if (step === 4) {
+                document.getElementById('step4-image').style.display = 'block';
+            }
+            currentStep = step;
+            updateButtons();
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                showStep(currentStep - 1);
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < 11) {
+                showStep(currentStep + 1);
+            } else {
+                alert("Congratulations! Installation steps completed.");
+            }
+        }
+
+        function updateButtons() {
+            var prevButton = document.querySelector('.nav-button:nth-child(1)');
+            var nextButton = document.querySelector('.nav-button:nth-child(2)');
+
+            if (currentStep === 1) {
+                prevButton.style.display = 'none';
+            } else {
+                prevButton.style.display = 'inline-block';
+            }
+
+            if (currentStep === 11) {
+                nextButton.textContent = 'Close';
+            } else {
+                nextButton.textContent = 'Next Step';
+            }
+        }
+
+        // Show initial step
+        showStep(1);
+    </script>
+</body>
+</html>
