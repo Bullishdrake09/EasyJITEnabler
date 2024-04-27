@@ -1,5 +1,5 @@
 @echo off
-%localAppData%\Programs\Python\Python312\python.exe SideJITServer-1.3.0\SideJITServer\__main__.py
+%localAppData%\Programs\Python\Python312\python.exe SideJITServer\SideJITServer\__main__.py
 pip3 install --upgrade SideJITServer
-pip3 install pymobiledevice3==3.3.0
+pip3 install pymobiledevice3==3.4.0
 pause
