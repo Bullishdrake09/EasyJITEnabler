@@ -1,0 +1,2 @@
+pymobiledevice3>=4.11.20,<5.0.0
+zeroconf==0.132.2

@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>SideJitServer Launcher</title>
+    <HTA:APPLICATION 
+        ID="Launcher"
+        APPLICATIONNAME="SideJitServer"
+        BORDER="thin"
+        BORDERSTYLE="normal"
+        CAPTION="yes"
+        MAXIMIZEBUTTON="no"
+        MINIMIZEBUTTON="no"
+        SCROLL="no"
+        SINGLEINSTANCE="yes"
+        SYSMENU="yes"
+        WINDOWSTATE="normal">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            margin: 0;
+            padding: 20px;
+            color: #E0E0E0;
+        }
+
+        h3 {
+            color: #E0E0E0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #121212;
+            background-color: #BB86FC;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #9a64db;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        button:active {
+            background-color: #7f4ab7;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            transform: scale(0.98);
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #1E1E1E;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>SideJitServer Launcher</h3>
+        <button onclick="runBatch('ENABLE SERVER FOR FIRST TIME HERE.bat')">Run JIT server setup for the first time</button>
+        <button onclick="runBatch('OPEN THIS FILE TO ENABLE JIT SERVER.bat')">Startup server (Use when you used first time setup before)</button>
+        <button onclick="runBatch('PIB Installer HERE.bat')">Install PIB</button>
+    </div>
+
+    <script>
+        function runBatch(file) {
+            var fso = new ActiveXObject("Scripting.FileSystemObject");
+            var folderPath = fso.GetParentFolderName(document.location);
+            var path = fso.BuildPath(folderPath, file);
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.Run('"' + path + '"', 1, true);
+        }
+    </script>
+</body>
+</html>

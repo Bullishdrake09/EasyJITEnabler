@@ -1,0 +1,33 @@
+services:
+  tunnel:
+    container_name: tunnel
+    build:
+      context: .
+#   if you want to experiment i would recommend to change target to builder for dev environment
+      target: final
+#    ports:
+#      - 8080:8080
+#   to be able to use zeroconf/bonjour we need host network access
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+#   make sure pair files are persistent
+#   :z is a label that needed if you are runnning podman,
+#   which is a rewritten security enhanced alternatives to docker
+      - ../data/.pymobiledevice3:/root/.pymobiledevice3:z
+#   making sure usbmuxd running otherwise docker won't start for safety.
+#   If you not using usbmuxd just comment out next 3 lines
+      - type: bind
+        source: /var/run/usbmuxd
+        target: /var/run/usbmuxd
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+# Gives access to create tunnels
+      - NET_ADMIN
+# Needed if you are using SElinux on a system, mostly RedHat/Fedora based distros
+    security_opt:
+      - "label:disable"
+
+    command: SideJITServer --port 8080 -d -vv
+

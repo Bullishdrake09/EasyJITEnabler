@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://i5.walmartimages.com/asr/56a26d04-a1f4-4036-ae2e-68c648bee5e0.a0337c695d2f03fb8a49e514bd9b477b.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" type="image/x-icon"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy JIT Enabler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            display: none;
+        }
+        #step1 {
+            display: block;
+        }
+        #step2,
+        #step3,
+        #step4,
+        #step5,
+        #step6,
+        #step7,
+        #step8,
+        #step9,
+        #step10,
+        #step11 {
+            display: none;
+        }
+
+        .step-image {
+            max-width: 100%;
+            display: none;
+            margin: auto;
+        }
+
+        .nav-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Easy JIT Enabler</h1>
+        <h5>Current stable version: 1.3.5</h5>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="https://www.python.org/downloads/">Python Download</a>
+        <a href="https://www.icloud.com/shortcuts/b0ffc9c3f0e74e7a8f8052c89fa322cf" target="_blank">Shortcut Download</a>
+        <a href="https://github.com/Bullishdrake09/EasyJITEnabler" target="_blank">EasyJITEnabler GitHub</a>
+	<a href="https://www.apple.com/itunes/download/win64/" target="_blank">Itunes Web Version</a>
+    </nav>
+    <section id="steps">
+        <h2>Steps to Install</h2>
+        <p id="step1">Step 1: Install Python from the official website. Make sure to check "Add Python to PATH" during installation and uncheck "Install launcher for all users". This is crucial for the setup to work.</p>
+        <img id="python-image" class="step-image" src="https://cloudacademy.com/wp-content/uploads/2020/01/Python-Windows-installer.png" alt="Python Installer">
+        
+        <p id="step2">Step 2: Restart your computer after installing Python.</p>
+        <img id="step2-image" class="step-image" src="https://media.geeksforgeeks.org/wp-content/uploads/20230324092503/Screenshot-2023-03-24-092449.png" alt="Python Installer">
+
+        <p id="step3">Step 3: Download and extract EasyJITEnabler from <a href="https://github.com/Bullishdrake09/EasyJITEnabler/releases/download/V1.0.0/EasyJITEnabler.7z" target="_blank">my GitHub</a>.</p>
+
+        <p id="step4">Step 4: Run the "Easy JIT Enabler" app you downloaded. The app will guide you through the next steps to enable JIT on your device.</p>
+        <img id="step4-image" class="step-image" src="https://infosec.ed.ac.uk/sites/default/files/styles/16_9/public/2022-10/img_extract%201-2.png?itok=hq-URQil" alt="Extracting Zip">
+
+        <p id="step5">Step 5: Install iTunes (web version) if you haven’t already.</p>
+
+        <p id="step6">Step 6: Run JIT server setup for the first time" button in the app to set up the server. Follow the on-screen prompts.</p>
+
+        <p id="step7">Step 7: Start the JIT server by clicking the "Startup server" button in the app.</p>
+
+        <p id="step8">Step 8: Install <a href="https://www.icloud.com/shortcuts/b0ffc9c3f0e74e7a8f8052c89fa322cf" target="_blank">this shortcut</a> on your iPhone.</p>
+
+        <p id="step9">Step 9: When installing the shortcut, enter your iPhone's UDID. You can find the UDID by opening iTunes, clicking the phone icon, and selecting 'Serial Number'.</p>
+
+        <p id="step10">Step 10: Enter your SideJIT server address in the shortcut. If you forget the address, start the server again using the app, and a new address will be generated.</p>
+
+        <p id="step11">Step 11: Run the "SideJIT" shortcut on your iPhone to enable JIT for your apps. Your phone must be connected to the same Wi-Fi network as your computer, and the server must be running.</p>
+        
+        <button class="nav-button" onclick="previousStep()">Previous Step</button>
+        <button class="nav-button" onclick="nextStep()">Next Step</button>
+    </section>
+    <footer>
+        <p>&copy; 2024 Easy JIT enabler by Bullishdrake09</p>
+    </footer>
+
+    <script>
+        var currentStep = 1;
+
+        function showStep(step) {
+            document.getElementById('step' + currentStep).style.display = 'none';
+            document.getElementById('step' + step).style.display = 'block';
+            document.getElementById('python-image').style.display = 'none';
+            document.getElementById('step2-image').style.display = 'none';
+            document.getElementById('step4-image').style.display = 'none';
+            if (step === 1) {
+                document.getElementById('python-image').style.display = 'block';
+            } else if (step === 2) {
+                document.getElementById('step2-image').style.display = 'block';
+            } else if (step === 4) {
+                document.getElementById('step4-image').style.display = 'block';
+            }
+            currentStep = step;
+            updateButtons();
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                showStep(currentStep - 1);
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < 11) {
+                showStep(currentStep + 1);
+            } else {
+                alert("Congratulations! Installation steps completed.");
+            }
+        }
+
+        function updateButtons() {
+            var prevButton = document.querySelector('.nav-button:nth-child(1)');
+            var nextButton = document.querySelector('.nav-button:nth-child(2)');
+
+            if (currentStep === 1) {
+                prevButton.style.display = 'none';
+            } else {
+                prevButton.style.display = 'inline-block';
+            }
+
+            if (currentStep === 11) {
+                nextButton.textContent = 'Close';
+            } else {
+                nextButton.textContent = 'Next Step';
+            }
+        }
+
+        // Show initial step
+        showStep(1);
+    </script>
+</body>
+</html>
